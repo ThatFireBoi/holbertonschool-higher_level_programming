@@ -1,17 +1,33 @@
 #!/usr/bin/python3
 """
-Contains method that prints out "My name is [full name]"
-Takes in two strings: first and last name
+
+This module prints the name of a anything
+
+Output: 'My name is <first name> <last name>'
+
+    * The first name and last name must be a strings
+
 """
 
 
 def say_my_name(first_name, last_name=""):
     """
-    Prints "My name is [full name]"
+
+    Prints the names
+
+    Args:
+        first_name (str): The first name of anything.
+        last_name (str): The last name of anything.
+
+    Raises:
+        TypeError: If `first_name` and `last_name` aren't strings.
+
     """
-    if isinstance(first_name, str) and isinstance(last_name, str):
-        print("My name is {:s} {:s}".format(first_name, last_name))
-    else:
-        raise TypeError("{:s} must be a string".
-                        format("first_name" if isinstance(last_name, str)
-                               else "last_name"))
+
+    if type(first_name) is not str:
+        raise TypeError('first_name must be a string')
+
+    if type(last_name) is not str:
+        raise TypeError('last_name must be a string')
+
+    print('My name is', first_name, last_name)
