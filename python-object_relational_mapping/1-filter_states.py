@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Script that lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa"""
+"""Script that lists all states with a name starting with N
+(upper N) from the database hbtn_0e_0_usa"""
 
 import MySQLdb
 from sys import argv
@@ -18,7 +19,8 @@ if __name__ == "__main__":
 
     """Print the results of the query."""
     for row in cur.fetchall():
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     """Close all cursors."""
     cur.close()
