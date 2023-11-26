@@ -15,8 +15,7 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     """Execute the query."""
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY %s\
-                ORDER BY id ASC", (argv[4],))
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY %s", (argv[4],))
 
     """Print the results of the query."""
     for row in cur.fetchall():
